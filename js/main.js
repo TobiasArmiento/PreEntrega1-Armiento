@@ -19,7 +19,7 @@ const numero2 = 10;
 
 const suma = numero1 + numero2;
 
-console.log ("El resultado de la suma es " + suma)
+document.write ("El resultado de la suma es " + suma)
 
 // multiplicacion
 
