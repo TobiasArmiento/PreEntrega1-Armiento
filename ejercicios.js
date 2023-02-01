@@ -360,3 +360,253 @@ console.log (concatenarString2) /* Muestra el resultado de concatenarstring2 den
 // }
 //
 // console.log("Finalizó el programa");
+
+
+
+
+
+// PRIMER PRE ENTREGA (FALTA AGREGAR COMENTARIOS AL CODIGO)
+//
+// alert("¡Hola! a continuación usted podra calcular el precio total de su pedido siendo consumidor final o responsable inscripto")
+// let Nombre = prompt("Ingrese su nombre");
+//
+// while (Nombre === ""){
+//     alert("El texto ingresado no es válido");
+//     Nombre = prompt("Ingrese su nombre nuevamente");
+//
+// }
+//
+// alert("¡Bienvenido " + Nombre + "!" + " IMPORTANTE: Tenga en cuenta que cada envase de 110cc de cada color tiene un precio de $200");
+//
+// let CantidadDeColores = prompt("Ingrese la cantidad de colores que quiera comprar");
+//
+// while ((CantidadDeColores === "") || (CantidadDeColores < 0)){
+//     alert("El numero ingresado no es válido")
+//     CantidadDeColores = prompt("Ingrese nuevamente la cantidad de colores que quiera comprar");
+// }
+//
+// let CantidadDeEnvases = prompt("Ingrese la cantidad de envases de 110cc quiere comprar de cada color (Precio de cada color es de $200)");
+//
+// while ((CantidadDeEnvases === "") || (CantidadDeEnvases < 0)){
+//     alert("El numero ingresado no es válido")
+//     CantidadDeEnvases = prompt("Ingrese nuevamente la cantidad de envases que quiera comprar de cada color");
+// }
+//
+// let TipoDeConsumidor = prompt("¿Es usted consumidor final? (responda con un Si o con un No)");
+// let PrecioDeCadaColor = 200;
+//
+// while (TipoDeConsumidor === ""){
+//     alert("La respuesta es inválida");
+//     TipoDeConsumidor = prompt("¿Es usted consumidor final? (responda con un Si o con un No)");
+// }
+//
+// if (TipoDeConsumidor === "Si"){
+//     let PrecioTotalConIva = parseInt(CantidadDeColores) * parseInt(CantidadDeEnvases) * PrecioDeCadaColor * 1.21;
+//     alert("El precio final de su pedido es " + "$" + PrecioTotalConIva);
+// }
+// else if (TipoDeConsumidor === "No"){
+//     let PrecioTotalSinIva = parseInt(CantidadDeColores) * parseInt(CantidadDeEnvases) * PrecioDeCadaColor;
+//     alert("El precio final de su pedido es " + "$" + PrecioTotalSinIva);
+// }
+//
+// else{
+//     alert("La respuesta es inválida");
+// }
+
+
+
+// Realizar un programa que le pida al usuario cadenas de texto hasta que ingrese “Salir”. Una vez que sale,
+// mostrarle en un alert los textos ingresados separados por una coma (,).
+
+
+/* Como primer paso se crea la funcion con el procedimiento que se quiera devolver luego con un const para que quede
+ el codigo mas simplificado */
+
+// function cadenaDeTextosUnidas () {
+//
+//     let concatenacion = "";
+//     /* Se crean variables donde se va a almacenar todos los textos ingresados por el usuario */
+//
+//     let concatenacionMasComa = ",";
+//     /* Luego se crea una variable con COMA para que se agregue una coma luego de cada texto ingresado */
+//
+//     let ingreseTexto = prompt("Escriba un texto");
+//     /* Se le pide al usuario que ingrese el texto */
+//
+//     while (ingreseTexto !== "Salir") {
+//
+//         concatenacion += ingreseTexto + concatenacionMasComa
+//         /* Se concatenan / Suman todos los textos ingresados por el usuario mas la coma despues de cada uno de estos mismos */
+//
+//         ingreseTexto = prompt("Escriba un texto NUEVAMENTE (Si quiere finalizar escriba la palabra Salir");
+//         /* Se le pide nuevamente al usuario que ingrese un texto con el ciclo WHILE hasta q ponga Salir*/
+//     }
+//
+//     return concatenacion;
+//     /* Te devuelve el resultado de toda la concatenacion mas las comas. SI NO SE PONE RETURN NUNCA TE LO VA A DEVOLVER POR LO TANTO NO SE VA A VISUALIZAR NUNCA */
+//
+// }
+//
+//
+// const resultadoDeCadenaDeTextosUnidas = cadenaDeTextosUnidas();
+// /* Se crea una variable para LLAMAR al resultado de todas las cadenas de texto unidas */
+// console.log("El resultado de la concatenacion es " + resultadoDeCadenaDeTextosUnidas);
+
+
+
+
+
+// Realizar un programa donde se le pida al usuario ingresar un número positivo y luego mostrar en pantalla el
+// conteo hacia atrás hasta llegar a 0. // NOTA: Tener en cuenta validar que es un número positivo el que ingresó.
+//
+//
+// function conteoDeNumerosHaciaAtras () {
+//
+//     let concatencaion = "";
+//     let espacioEntreConcatenacion = " ";
+//     let ingresarUnNumeroPositivo = prompt("Ingrese un numero POSITIVO");
+//     let i = 0;
+//
+//     while (ingresarUnNumeroPositivo >= 0) {
+//
+//         concatencaion += ingresarUnNumeroPositivo + espacioEntreConcatenacion
+//         ingresarUnNumeroPositivo--;
+//     }
+//
+//     return concatencaion;
+// }
+//
+// const llamarConteoDeNumerosHaciaAtras = conteoDeNumerosHaciaAtras();
+//
+// console.log("El conteo de numeros hacia atras es " + llamarConteoDeNumerosHaciaAtras);
+
+
+
+
+
+
+// Pedirle al usuario que ingrese un número, realizar un conteo hacia atrás hasta llegar a 0 pero sólo mostrando los
+// números que son pares.//
+
+// function conteoDeNumerosHaciaAtras () {
+//
+//     let ingreseNumero = parseInt(prompt("Ingrese un numero"));
+//
+//     for (let i = 0; i <= ingreseNumero; i++) {
+//
+//         if(i % 2 === 1){
+//             continue;
+//         }
+//
+//         console.log(i);
+//     }
+//
+// }
+//
+// const llamarConteoDeNumerosHaciaAtras = conteoDeNumerosHaciaAtras();
+//
+// console.log(llamarConteoDeNumerosHaciaAtras);
+
+
+
+
+
+
+
+
+// /* Realizar un programa que le pida al usuario cuántos números quiere ingresar y entre todos los que ingrese
+//  calcular cual es el mayor, el menor y la media. */
+//
+// /* Primero se pregunta al usuario y se declaran las variables donde se van a almacenar los numeros ingresados proximamente */
+// let cantidadDeNumeros = prompt("Ingrese cuantos numeros quiere ingresar");
+// let menor = 0;
+// let mayor = 0;
+// let media = 0;
+//
+// ! Se utiliza el ciclo for para que el usuario decida cuantos numeros desea poner */
+// for (let i = 0; i < cantidadDeNumeros; i++) {
+//
+//     ! Se pregunta al usuario que numeros quiere poner */
+//     let ingreseNumeros = parseInt(prompt("Ingrese un numero"));
+//
+//     ! I al llegar a 0 compara los numeros ingresados y los ubica en su correcto lugar*/
+//     if(i === 0) {
+//
+//         menor = ingreseNumeros; /*1000*/
+//         mayor = ingreseNumeros; /*1000*/ /* LUEGO SE ESCRIBE */ /*El MAYOR pasa a ser 12000*/
+//     }
+//
+//
+//     ! Si el numero ingresado es menor que el menor sera el numero mas chico */
+//     if(ingreseNumeros < menor){
+//
+//         menor = ingreseNumeros;
+//     }
+//
+//
+//     ! Si el numero ingresado es mayor que el menor sera el numero mas grande */
+//     if (ingreseNumeros > mayor) {
+//
+//         mayor = ingreseNumeros;
+//     }
+//
+//
+//     ! Se suman los numero ingresados y se los divide por la cantidad de numeros que ingreso el usuario */
+//     media += ingreseNumeros;
+//
+// }
+//
+// console.log("El numero mas chico es " + menor);
+// console.log("El numero mas grande es " + mayor);
+// console.log("La media es " + media);
+//
+
+
+
+
+/* Hacer un programa en el cual se ingrese una figura (Triángulo, cuadrado, círculo y rectángulo) y dependiendo que
+ figura elija, se le pida base, altura o radio y calcular el área. */
+
+//
+// const ingreseFigura = prompt("Ingrese una figura");
+// function variablesAreaSinCirculo () {
+//
+//     let base = prompt("Ingrese la longitud de la base en mm");
+//     let altura = prompt("Ingrese la longitud de la base en mm");
+//
+//     let calcularArea = base * altura;
+//
+//
+//     console.log("El area del" + ingreseFigura + " es " + calcularArea);
+// }
+//
+// if(ingreseFigura === "Triangulo") {
+//
+//     variablesAreaSinCirculo();
+//
+// }
+//
+// else if(ingreseFigura === "Cuadrado") {
+//
+//     variablesAreaSinCirculo();
+// }
+//
+// else if(ingreseFigura === "Rectangulo") {
+//
+//     variablesAreaSinCirculo();
+// }
+//
+// else if(ingreseFigura === "Circulo") {
+//
+//     let radio = prompt("Ingrese el radio del circulo")
+//
+//     let calcularArea = Math.PI *(radio * radio);
+//
+//     console.log("El area del circulo es es " + calcularArea);
+// }
+//
+// else {
+//     alert("El texto ingresado no es valido");
+// }
+//
+// console.log("finaliza el programa");

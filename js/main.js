@@ -1,46 +1,65 @@
 
-alert("¡Hola! a continuación usted podra calcular el precio total de su pedido siendo consumidor final o responsable inscripto")
-let Nombre = prompt("Ingrese su nombre");
 
-while (Nombre === ""){
-    alert("El texto ingresado no es válido");
-    Nombre = prompt("Ingrese su nombre nuevamente");
 
+// let productos = [{id: 1, nombre: 'Limon', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1},
+//                 {id: 2, nombre: 'Vainilla', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 2},
+//                 {id: 3, nombre: 'Chocolate', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1},
+//                 {id: 4, nombre: 'Frutilla', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1}
+// ];
+
+
+
+// console.log('El listado de productos es: ');
+// for( const producto of productos) {
+//     console.log(`Id: ${producto.id}`);
+//     console.log(`nombre: ${producto.nombre}`);
+//     console.log(`linea: ${producto.linea}`);
+//     console.log(`tamaño: ${producto.tamaño}`);
+//     console.log(`precio: ${producto.precio}`);
+//     console.log(`cantidad: ${producto.cantidad}`);
+//     console.log(" ");
+// }
+
+
+// productos.push
+
+
+
+// ! creas una class con su constructor y sus objetos.
+
+class EsenciasAlimenticias {
+    constructor(id, nombre, linea, tamaño, precio, cantidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.linea = linea;
+        this.tamaño = tamaño;
+        this.precio = Number(precio);
+        this.cantidad = Number(cantidad);
+        this.vendido = false;
+        this.subtotal = 0;
+    }
+
+    sumaIva () {
+        this.precio = this.precio * 1.21;
+    }
 }
 
-alert("¡Bienvenido " + Nombre + "!" + " IMPORTANTE: Tenga en cuenta que cada envase de 110cc de cada color tiene un precio de $200");
 
-let CantidadDeColores = prompt("Ingrese la cantidad de colores que quiera comprar");
+const esencias = []
 
-while ((CantidadDeColores === "") || (CantidadDeColores < 0)){
-    alert("El numero ingresado no es válido")
-    CantidadDeColores = prompt("Ingrese nuevamente la cantidad de colores que quiera comprar");
+esencias.push(new EsenciasAlimenticias (1, `Limon`, `D`, `110cc`, 200, 1)),
+esencias.push(new EsenciasAlimenticias (2, 'Vainilla', 'D', '110cc', 200, 10)),
+esencias.push(new EsenciasAlimenticias (3, 'Chocolate', 'D', '110cc', 200, 1)),
+esencias.push(new EsenciasAlimenticias (4, 'Mango', 'D', '110cc', 200, 6)),
+
+console.log(esencias);
+
+function subtotal () {
+    for(const producto of esencias) {
+    producto.sumaIva();
+    producto.subtotal = producto.precio * producto.cantidad;
+    producto.vendido = true;
+    }
 }
 
-let CantidadDeEnvases = prompt("Ingrese la cantidad de envases de 110cc quiere comprar de cada color (Precio de cada color es de $200)");
-
-while ((CantidadDeEnvases === "") || (CantidadDeEnvases < 0)){
-    alert("El numero ingresado no es válido")
-    CantidadDeEnvases = prompt("Ingrese nuevamente la cantidad de envases que quiera comprar de cada color");
-}
-
-let TipoDeConsumidor = prompt("¿Es usted consumidor final? (responda con un Si o con un No)");
-let PrecioDeCadaColor = 200;
-
-while (TipoDeConsumidor === ""){
-    alert("La respuesta es inválida");
-    TipoDeConsumidor = prompt("¿Es usted consumidor final? (responda con un Si o con un No)");
-}
-
-if (TipoDeConsumidor === "Si"){
-    let PrecioTotalConIva = parseInt(CantidadDeColores) * parseInt(CantidadDeEnvases) * PrecioDeCadaColor * 1.21;
-    alert("El precio final de su pedido es " + "$" + PrecioTotalConIva);
-}
-else if (TipoDeConsumidor === "No"){
-    let PrecioTotalSinIva = parseInt(CantidadDeColores) * parseInt(CantidadDeEnvases) * PrecioDeCadaColor;
-    alert("El precio final de su pedido es " + "$" + PrecioTotalSinIva);
-}
-
-else{
-    alert("La respuesta es inválida");
-}
+subtotal();
