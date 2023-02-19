@@ -1,72 +1,86 @@
+// ! SUGAR SYNTAX //
+
+// let numero = 5;
+
+//primera simplificacion
+
+// numero += 2;
+// numero -= 2;
+// numero *= 2;
+// numero /= 2;
 
 
+//FORMA SUGAR SYNTAX
 
-// let productos = [{id: 1, nombre: 'Banana', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1},
-//                 {id: 2, nombre: 'Cacao', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 2},
-//                 {id: 3, nombre: 'Dulce de Leche', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1},
-//                 {id: 4, nombre: 'Fernet', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1}
-// ];
+// numero++;
+// numero--;
 
+// ! OPERADORES TRERNARIOS //
 
+// FORMA TRADICIONAL
 
-// console.log('El listado de productos es: ');
-// for( const producto of productos) {
-//     console.log(`Id: ${producto.id}`);
-//     console.log(`nombre: ${producto.nombre}`);
-//     console.log(`linea: ${producto.linea}`);
-//     console.log(`tamaño: ${producto.tamaño}`);
-//     console.log(`precio: ${producto.precio}`);
-//     console.log(`cantidad: ${producto.cantidad}`);
-//     console.log(" ");
+// temperatura = parseInt(prompt("Ingrese la temperatura actual"));
+
+// if(temperatura >= 30){
+//     alert("Es un dia caluroso")
+// } else{
+//     alert("Es un dia cálido")
 // }
 
+// ! FORMA CON OPERADOR TERNARIO //
 
-// productos.push
+// condicion ? caso1 : caso2
 
-
-
-// ! creacion de una clase con su constructor y sus objetos.
-
-class EsenciasAlimenticias {
-    constructor(id, nombre, linea, tamaño, precio, cantidad) {
-        this.id = id;
-        this.nombre = nombre;
-        this.linea = linea;
-        this.tamaño = tamaño;
-        this.precio = Number(precio);
-        this.cantidad = Number(cantidad);
-        this.vendido = false;
-        this.subtotal = 0;
-    }
-
-    // ! Se grega el iva dentro de la misma class.
-    sumaIva () {
-        this.precio = this.precio * 1.21;
-    }
-}
+// temperatura >= 30 ? alert("Es un dia caluroso") : alert("Es un dia cálido");
 
 
-// ! Se declara el array
-const esencias = []
+// ! OPERADOR LOGICO AND
 
-// ! Se llama al array "esencias.push" y con "new" se agrega el nuevo producto a la clase EsenciasAlimienticias. 
-esencias.push(new EsenciasAlimenticias (1, `Limon`, `D`, `110cc`, 200, 1)),
-esencias.push(new EsenciasAlimenticias (2, 'Vainilla', 'D', '110cc', 200, 10)),
-esencias.push(new EsenciasAlimenticias (3, 'Chocolate', 'D', '110cc', 200, 1)),
-esencias.push(new EsenciasAlimenticias (4, 'Mango', 'D', '110cc', 200, 6)),
+// FORMA TRADICIONAL CON ARRAY
 
-// ! Con un "console.log" se visualiza el resultado del agregado de nuevos productos dentro de la clase "EsenciasAlimenticias"
-console.log(esencias);
+// const carrito = []
+
+// if(carrito.length === 0){
+//     alert("El carrito esta vacío!");
+// }
+
+//FORMA CON OPERADOR LOGICO AND
+
+// carrito.length === 0 && alert("El carrito esta vacío!") // SINO SE CUMPLE DEVUELVE FALSE
 
 
-// ! Se crea la funcion "subtotal" para calcular este mismo y el Iva luego de tener los valores de cada objeto creando una funcion. 
-function subtotal () {
-    for(const producto of esencias) {
-    producto.sumaIva();
-    producto.subtotal = producto.precio * producto.cantidad;
-    producto.vendido = true;
-    }
-}
+// ! OPERADOR LOGICO AND
 
-// ! Se llama a la funcion para poder visualizarla. 
-subtotal();
+// const persona = {
+//     nombre:"Tomás",
+//     edad: 21,
+// }
+
+// ! OPERADOR TERNARIO OR ==> FORMA TRADICIONAL
+
+// if(persona.telefono === null){
+//     console.log("El telefono no existe")
+// } else{
+//     console.log("El numero de telefono es " + persona.telefono);
+// }
+
+// FORMA CON OPERADOR TERNARIO OR
+
+// console.log(persona.telefono || "El telefono no existe");
+
+
+// FORMA TRADICIONAL CON LOCALSTORAGE
+
+// carrito = [];
+
+// carritoLS = localStorage.getItem("carrito");
+
+// if(carritoLS !== null) {
+//     carrito = JSON.parse(carritoLS);
+// }
+
+// FORMA CON OPERADOR OR
+
+// const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+// console.log(carrito);

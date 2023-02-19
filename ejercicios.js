@@ -610,3 +610,214 @@ console.log (concatenarString2) /* Muestra el resultado de concatenarstring2 den
 // }
 //
 // console.log("finaliza el programa");
+
+
+
+
+
+
+
+
+
+
+
+
+// let productos = [{id: 1, nombre: 'Banana', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1},
+//                 {id: 2, nombre: 'Cacao', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 2},
+//                 {id: 3, nombre: 'Dulce de Leche', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1},
+//                 {id: 4, nombre: 'Fernet', linea: 'D', tamaño: '35cc', precio: 200, cantidad: 1}
+// ];
+
+
+
+// console.log('El listado de productos es: ');
+// for( const producto of productos) {
+//     console.log(`Id: ${producto.id}`);
+//     console.log(`nombre: ${producto.nombre}`);
+//     console.log(`linea: ${producto.linea}`);
+//     console.log(`tamaño: ${producto.tamaño}`);
+//     console.log(`precio: ${producto.precio}`);
+//     console.log(`cantidad: ${producto.cantidad}`);
+//     console.log(" ");
+// }
+
+
+// productos.push
+
+
+
+// ! creacion de una clase con su constructor y sus objetos.
+
+// class EsenciasAlimenticias {
+//     constructor(id, nombre, linea, tamaño, precio, cantidad) {
+//         this.id = id;
+//         this.nombre = nombre;
+//         this.linea = linea;
+//         this.tamaño = tamaño;
+//         this.precio = Number(precio);
+//         this.cantidad = Number(cantidad);
+//         this.vendido = false;
+//         this.subtotal = 0;
+//     }
+
+    // ! Se grega el iva dentro de la misma class.
+//     sumaIva () {
+//         this.precio = this.precio * 1.21;
+//     }
+// }
+
+
+// ! Se declara el array
+// const esencias = []
+
+// ! Se llama al array "esencias.push" y con "new" se agrega el nuevo producto a la clase EsenciasAlimienticias. 
+// esencias.push(new EsenciasAlimenticias (1, `Limon`, `D`, `110cc`, 200, 1)),
+// esencias.push(new EsenciasAlimenticias (2, 'Vainilla', 'D', '110cc', 200, 10)),
+// esencias.push(new EsenciasAlimenticias (3, 'Chocolate', 'D', '110cc', 200, 1)),
+// esencias.push(new EsenciasAlimenticias (4, 'Mango', 'D', '110cc', 200, 6)),
+
+// ! Con un "console.log" se visualiza el resultado del agregado de nuevos productos dentro de la clase "EsenciasAlimenticias"
+// console.log(esencias);
+
+
+// ! Se crea la funcion "subtotal" para calcular este mismo y el Iva luego de tener los valores de cada objeto creando una funcion. 
+// function subtotal () {
+//     for(const producto of esencias) {
+//     producto.sumaIva();
+//     producto.subtotal = producto.precio * producto.cantidad;
+//     producto.vendido = true;
+//     }
+// }
+
+// ! Se llama a la funcion para poder visualizarla. 
+// subtotal();
+
+
+
+// let titulos = document.getElementsByTagName("h1");
+
+// console.log(titulos[0].innerHTML);
+
+// let body = document.getElementsByTagName("body");
+
+// console.log(body[0].innerHTML);
+
+// const hache1 = document.getElementsByTagName("h1");
+
+// hache1[0].innerHTML = "se modifico el titulo h1";
+
+
+// const contenedorLi = document.getElementsByTagName("li");
+
+// document.getElementById("mostrar").innerHTML = contenedorLi[3].innerHTML;
+
+
+
+// const classPaises = document.getElementsByClassName("paises");
+
+// for (const pais of classPaises) {
+//     console.log(pais.innerHTML);
+// }
+
+
+
+// ! PRE-ENTREGA 2 //
+
+
+//CLASES
+
+// class Vuelo {
+
+//     constructor(numeroDeVuelo, destino, precioAsientos){
+
+//             this.numeroDeVuelo = numeroDeVuelo;
+//             this.destino = destino;
+//             this.precioAsientos = precioAsientos;
+
+//             this.generarAsientos ();
+//     }
+
+//     generarAsientos (){
+        
+//         this.asientos = [];
+
+//         for(let i = 0; i < 30; i++){
+            
+//             const asiento = new Asientos(i, false);
+            
+//             this.asientos.push(asiento);
+            
+//         }
+//     }
+// }
+
+// class Asientos {
+
+//     constructor(ID, ocupado){
+//             this.ID = ID;
+//             this.ocupado = ocupado;
+//     }
+// }
+
+// //FUNCIONES
+
+// function obtenerVuelo (numeroDeVuelo) {
+
+//     return ListaDeVuelos.find ( (vuelo) => {
+//         return vuelo.numeroDeVuelo === numeroDeVuelo;
+//     });
+
+// }
+
+// function hayAsientosDisponibles (vuelo, cantidadDeAsientos) {
+
+//     const asientosDisponibles = vuelo.asientos.filter( (asiento) => {
+//         return !asiento.ocupado;
+//     });
+
+//     return asientosDisponibles.length >= cantidadDeAsientos;
+// }
+
+// function calcularTotalDelVuelo(vuelo, cantidadDeAsientos) {
+
+//     return cantidadDeAsientos * vuelo.precioAsientos;
+// }
+
+// //Inicio del programa
+
+// const ListaDeVuelos = [
+//     new Vuelo("AB135", "Buenos Aires", 75),
+//     new Vuelo("AB136", "Madrid", 80),
+//     new Vuelo("AB141", "Barcelona", 80),
+// ];
+
+// let vueloAComprar = prompt("Ingrese el vuelo que desea comprar. Ingrese SALIR si quiere finalizar el programa");
+
+
+// while(vueloAComprar !== "SALIR") {
+
+//     let vuelo = obtenerVuelo(vueloAComprar);
+    
+//     if(vuelo !== undefined) {
+
+//     //Le pido al usuario que ingrese la cantidad de asientos a reservar.
+//         let cantidadDeAsientos = parseInt(prompt("Ingrese la cantidad de asientos que desee reservar"));
+
+//         while(cantidadDeAsientos <= 0 || !hayAsientosDisponibles(vuelo, cantidadDeAsientos)) {
+//             cantidadDeAsientos = parseInt(prompt("Ingrese la cantidad de asientos que desee reservar"));
+//         }
+//         console.log(cantidadDeAsientos);
+
+
+//         /*calcular el total del vuelo*/
+
+//         const total = calcularTotalDelVuelo(vuelo, cantidadDeAsientos);
+
+//         alert(`El total a pagar por el vuelo ${vuelo.numeroDeVuelo} con destino a ${vuelo.destino} es de $${total}`);
+
+//     } else{
+//         alert("Los datos ingresados no son válidos");
+//     }
+    
+//     vueloAComprar = prompt("Ingrease el vuelo que desea comprar. Ingrese SALIR si quiere finalizar el programa");
+// }
