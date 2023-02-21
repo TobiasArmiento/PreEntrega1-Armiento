@@ -4,11 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre Entrega 1 - Tobias Armiento</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pre Entrega 3 - Tobias Armiento</title>
 </head>
 <body>
+
+        <form id="cargarProductos">
     
-    <h1 class="titulo">Pre Entrega 1 - Tobias Armiento</h1>
+        <input type="text" id="nombreDelProducto" placeholder="Nombre" autocomplete="off">
+    
+        <input type="text" id="precioDelProducto" placeholder="Precio" autocomplete="off">
+    
+        <button id="botonCargar" type="submit">Cargar</button>
+    
+    </form>
+    
+    <input type="text" id="buscarProducto">
+
+    <table id="listadoProductos">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    
+        <tbody id="bodyTabla">
+    
+        </tbody>
+    </table>
+    
+    <!-- <h1 class="titulo">Pre Entrega 1 - Tobias Armiento</h1>
     <p>Lista Desordenada:</p>
     <ul>
         <li>arroz</li>
@@ -25,7 +52,7 @@
     <h2 class="paises">Argentina</h2>
     <h2 class="paises">Uruguay</h2>
     <h2 class="paises">Chile</h2>
-    
+    -->
     <script src="js/main.js"></script>
 </body>
 </html>
